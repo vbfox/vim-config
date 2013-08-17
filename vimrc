@@ -190,4 +190,12 @@ endfunction
 
 set guitablabel=%{GuiTabLabel()}
 
+
+"""""""""""""""""""""""""""""""""
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/local/go/misc/vim
+filetype plugin indent on
+syntax on
+
 " vim:set ts=2 sw=2 et:
