@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 lang C " Passage en anglais
 set nocompatible
 
