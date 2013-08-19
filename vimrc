@@ -23,6 +23,14 @@ cmap <C-V>		<C-R>+
 if !has("unix")
   set guioptions-=a
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MacVim specific stuff
+
+if has("gui_macvim")
+  set guifont=Menlo\ Regular:h13
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("autocmd")
