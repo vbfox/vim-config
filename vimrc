@@ -203,6 +203,8 @@ set guitablabel=%{GuiTabLabel()}
 filetype off
 filetype plugin indent off
 set runtimepath+=/usr/local/go/misc/vim
+set runtimepath+=C:\Go\misc\vim
+set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
 
