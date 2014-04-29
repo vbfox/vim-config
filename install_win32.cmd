@@ -1,1 +1,1 @@
-mklink /H "../_vimrc" "./.vimrc"
+mklink /H "../_vimrc" "./vimrc"
