@@ -68,6 +68,12 @@ inoremap <C-Y> <C-O><C-R>
 
 if has("gui_macvim")
   set guifont=Menlo\ Regular:h13
+else
+  if has ('win32')
+      set guifont=Powerline_Consolas:h11:cANSI
+  else
+      set guifont=Powerline\ Consolas\ 11
+  endif
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -237,6 +243,14 @@ endfunction
 
 set guitablabel=%{GuiTabLabel()}
 
+"""""""""""""""""""""""""""""""""
+" Airline
+
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'solarized'
+
+set ttimeoutlen=50
 
 """""""""""""""""""""""""""""""""
 filetype off
