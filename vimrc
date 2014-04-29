@@ -35,8 +35,8 @@ cmap <S-Insert>		<C-R>+
 " were characterwise instead.
 " Uses the paste.vim autoload script.
 
-exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
-exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+silent! exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+silent! exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
 imap <S-Insert>		<C-V>
 vmap <S-Insert>		<C-V>
@@ -107,7 +107,7 @@ endif
 
 set mousemodel=extend "Click droit sélectionne en mode visuel, au lieu de faire un popup
 if has("gui_running")
-  colorscheme duskfox
+  silent! colorscheme duskfox
   set cursorline "Change la couleur de la ligne ou est le curseur
   set guioptions-=tT "Pas de toolbar, pas de menus détachables
   set guioptions-=m " Pas de menu
