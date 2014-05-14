@@ -246,9 +246,13 @@ set guitablabel=%{GuiTabLabel()}
 """""""""""""""""""""""""""""""""
 " Airline
 
-set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'solarized'
+if has("gui_running")
+  let g:airline_theme = 'solarized'
+else
+  let g:airline_theme = 'murmur'
+endif
+set laststatus=2
 
 set ttimeoutlen=50
 
