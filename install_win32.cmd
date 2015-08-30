@@ -1,1 +1,2 @@
-mklink /H "../_vimrc" "./vimrc"
+del "..\_vimrc"
+mklink /H "..\_vimrc" "vimrc"

@@ -1,3 +1,8 @@
+if has('win32') || has('win64')
+    " Make windows use ~/.vim too, it default to ~/vimfiles
+    set runtimepath^=~/.vim
+endif
+
 execute pathogen#infect()
 
 lang C " Passage en anglais
