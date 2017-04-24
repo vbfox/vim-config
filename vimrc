@@ -3,7 +3,14 @@ if has('win32') || has('win64')
     set runtimepath^=~/.vim
 endif
 
-execute pathogen#infect()
+let g:airline_symbols_ascii = 1
+
+call plug#begin()
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
 
 lang C " Passage en anglais
 set nocompatible
@@ -115,10 +122,14 @@ if  &t_Co > 2 || has("gui_running")
   syntax on
 endif
 
+set background=dark
+if &t_Co >=256
+  silent! colorscheme gruvbox
+  let g:airline_theme = 'gruvbox'
+endif
 
 set mousemodel=extend "Click droit sélectionne en mode visuel, au lieu de faire un popup
 if has("gui_running")
-  silent! colorscheme duskfox
   set cursorline "Change la couleur de la ligne ou est le curseur
   set guioptions-=tT "Pas de toolbar, pas de menus détachables
   set guioptions-=m " Pas de menu
@@ -145,7 +156,7 @@ endif
 set nobackup "Pas de backups
 
 """ AUTRES
-set number "Numérotation des lignes
+set nonumber "Numérotation des lignes
 set linebreak "Coupe joliment les lignes, pas brutablement
 set shortmess+=A "Rajoute 'A' aux options de messages pour enlever les 'ATTENTION' liés au swap
 "set laststatus=2 "Toujours afficher la ligne de status, meme avec un seul buffer
@@ -252,11 +263,6 @@ set guitablabel=%{GuiTabLabel()}
 " Airline
 
 let g:airline#extensions#tabline#enabled = 1
-if has("gui_running")
-  let g:airline_theme = 'solarized'
-else
-  let g:airline_theme = 'murmur'
-endif
 set laststatus=2
 
 set ttimeoutlen=50
