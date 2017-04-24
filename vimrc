@@ -117,7 +117,7 @@ if has("extra_search")
   set incsearch "Surligne des la frappe
 endif
 
-if  &t_Co > 2 || has("gui_running")
+if  (&t_Co > 2 || has("gui_running")) && (has('syntax'))
   "Active la coloration syntaxique
   syntax on
 endif
@@ -259,13 +259,11 @@ endfunction
 
 set guitablabel=%{GuiTabLabel()}
 
-"""""""""""""""""""""""""""""""""
-" Airline
-
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-
 set ttimeoutlen=50
+set scrolloff=1
+set sidescrolloff=5
 
 """""""""""""""""""""""""""""""""
 filetype off
